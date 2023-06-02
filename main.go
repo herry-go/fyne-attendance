@@ -2,23 +2,25 @@
 package main
 
 import (
-	"fyne.io/fyne"
-	"fyne.io/fyne/app"
-	"fyne.io/fyne/theme"
+	fyne "fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/theme"
+	"gtk-attendance/fonts"
 	home "gtk-attendance/screens"
 )
 
 func main() {
 	a := app.NewWithID("v1.0.0")
 	a.SetIcon(theme.FyneLogo())
-	w := a.NewWindow("HM TOOL")
+	a.Settings().SetTheme(&fonts.MyTheme{})
+	w := a.NewWindow("考勤助手")
 
 	h := home.NewHome(w)
 	h.Menu()
 	w.SetContent(h.UILayout())
 
 	w.Resize(fyne.NewSize(800, 600))
-	w.SetFixedSize(true)
+	w.SetFixedSize(false)
 	w.CenterOnScreen()
 	w.SetMaster()
 	w.ShowAndRun()

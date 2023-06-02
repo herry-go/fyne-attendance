@@ -13,3 +13,33 @@
 ## 打包
 - Linux:   fyne-cross linux
 - Windows: fyne-cross windows -arch=amd64 -app-id=v1.0.0
+
+## 字体
+- 字体文件下载地址 https://www.fonts.net.cn/
+- fyne bundle fonts.ttf >> bundle.go
+
+## 主题切换
+- vendor/fyne.io/fyne/v2/settings.go
+- /vendor/fyne.io/fyne/v2/app/settings.go
+```
++func (s *settings) UpdateTheme() {
++	name := s.schema.ThemeName
++	if env := os.Getenv("FYNE_THEME"); env != "" {
++		name = env
++	}
++
++	variant := defaultVariant()
++	effectiveTheme := s.theme
++	if !s.themeSpecified {
++		effectiveTheme = s.loadSystemTheme()
++	}
++	switch name {
++	case "light":
++		variant = theme.VariantLight
++	case "dark":
++		variant = theme.VariantDark
++	}
++
++	s.applyTheme(effectiveTheme, variant)
++}
+```

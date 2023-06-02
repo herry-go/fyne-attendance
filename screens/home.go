@@ -2,13 +2,15 @@
 package home
 
 import (
-	"fyne.io/fyne"
-	"fyne.io/fyne/canvas"
 	"fyne.io/fyne/cmd/fyne_demo/data"
-	"fyne.io/fyne/layout"
-	"fyne.io/fyne/theme"
-	"fyne.io/fyne/widget"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/theme"
+	"fyne.io/fyne/v2/widget"
 	"gtk-attendance/utils/ui"
+	"os"
 	"path/filepath"
 	"strings"
 )
@@ -88,24 +90,29 @@ func (p *Home) showConfOpen() {
 }
 
 func (p *Home) Start() {
+	if p.confFile == "" || p.pdfFile == "" {
+		ui.ShowInformation("提示","请上传考勤文件和配置文件！", p.win)
+		return
+	}
+
 	p.pdfIsConverting <- true
 	err := Calc(p)
 	if err != nil {
 		p.errorChan <- err.Error()
 	}
 	p.outChan <- p.pdfFile
-	ui.ShowInformation("prompt","ok", p.win)
+	ui.ShowInformation("提示","ok", p.win)
 	p.pdfIsConverting <- false
 }
 
 func (p *Home) Menu(){
 	p.win.SetMainMenu(
 		fyne.NewMainMenu(
-			fyne.NewMenu("File",
-				fyne.NewMenuItem("Open", func() { p.showFileOpen() }),
+			fyne.NewMenu("文件",
+				fyne.NewMenuItem("打开", func() { p.showFileOpen() }),
 			),
-			fyne.NewMenu("Run",
-				fyne.NewMenuItem("Start", func() { p.Start()}),
+			fyne.NewMenu("运行",
+				fyne.NewMenuItem("启动", func() { p.Start()}),
 			),
 			))
 }
@@ -117,39 +124,41 @@ func (p *Home) UILayout() *fyne.Container {
 
 
 
-	ltitle := widget.NewLabelWithStyle("file:", fyne.TextAlignCenter, fyne.TextStyle{Bold: true})
+	ltitle := widget.NewLabelWithStyle("考勤文件:", fyne.TextAlignCenter, fyne.TextStyle{Bold: true})
 	txtFile := widget.NewEntry()
-	txtFile.SetPlaceHolder("")
-	titleBtn := widget.NewButtonWithIcon("browse", theme.FolderOpenIcon(), p.showFileOpen)
+	txtFile.SetPlaceHolder("请选择考勤文件")
+	txtFile.Resize(fyne.NewSize(10, 200))
+	titleBtn := widget.NewButtonWithIcon("选择文件", theme.FolderOpenIcon(), p.showFileOpen)
 
-	conf := widget.NewLabelWithStyle("conf:", fyne.TextAlignCenter, fyne.TextStyle{Bold: true})
+	conf := widget.NewLabelWithStyle("假期配置:", fyne.TextAlignCenter, fyne.TextStyle{Bold: true})
 	confFile := widget.NewEntry()
-	confFile.SetPlaceHolder("")
-	confBtn := widget.NewButtonWithIcon("browse", theme.FolderOpenIcon(), p.showConfOpen)
+	confFile.SetPlaceHolder("请选择假期配置")
+	confBtn := widget.NewButtonWithIcon("选择文件", theme.FolderOpenIcon(), p.showConfOpen)
 
-	out := widget.NewLabelWithStyle("out:", fyne.TextAlignCenter, fyne.TextStyle{Bold: true})
+	out := widget.NewLabelWithStyle("计算结果:", fyne.TextAlignCenter, fyne.TextStyle{Bold: true})
 	outFile := widget.NewEntry()
-	outFile.SetPlaceHolder("")
+	outFile.SetPlaceHolder("计算结果显示")
+	outBtn := widget.NewButtonWithIcon("计  算", theme.HomeIcon(), p.Start)
 
-	head := fyne.NewContainerWithLayout(layout.NewHBoxLayout())
-	title := fyne.NewContainerWithLayout(layout.NewHBoxLayout(), ltitle,titleBtn, txtFile)
-	confLay := fyne.NewContainerWithLayout(layout.NewHBoxLayout(), conf,confBtn,  confFile)
-	finsh := fyne.NewContainerWithLayout(layout.NewHBoxLayout(), out, outFile)
+	head := container.New(layout.NewHBoxLayout())
+	title := container.New(layout.NewGridLayout(3), ltitle,titleBtn, txtFile)
+	confLay := container.New(layout.NewGridLayout(3), conf,confBtn,  confFile)
+	finsh := container.New(layout.NewGridLayout(3), out, outBtn, outFile)
 
 
 
-	box := widget.NewVBox(
+	box := container.NewVBox(
 		layout.NewSpacer(),
 		layout.NewSpacer(),
-		widget.NewGroup("Theme",
-			fyne.NewContainerWithLayout(layout.NewGridLayout(2),
-				widget.NewButton("Dark", func() {
-					fyne.CurrentApp().Settings().SetTheme(theme.DarkTheme())
-				}),
-				widget.NewButton("Light", func() {
-					fyne.CurrentApp().Settings().SetTheme(theme.LightTheme())
-				}),
-			),
+		container.New(layout.NewGridLayout(2),
+			widget.NewButton("Dark", func() {
+				os.Setenv("FYNE_THEME","dark")
+				fyne.CurrentApp().Settings().UpdateTheme()
+			}),
+			widget.NewButton("Light", func() {
+				os.Setenv("FYNE_THEME","light")
+				fyne.CurrentApp().Settings().UpdateTheme()
+			}),
 		),
 	)
 
@@ -157,7 +166,7 @@ func (p *Home) UILayout() *fyne.Container {
 	msg := widget.NewEntry()
 
 
-	l := fyne.NewContainerWithLayout(
+	l := container.New(
 		layout.NewVBoxLayout(),
 		head,
 		title,

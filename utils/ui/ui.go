@@ -3,9 +3,9 @@ package ui
 import (
 	"strings"
 
-	"fyne.io/fyne"
-	"fyne.io/fyne/dialog"
-	"fyne.io/fyne/storage"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/dialog"
+	"fyne.io/fyne/v2/storage"
 )
 
 // ShowError is show error dialog
@@ -24,7 +24,7 @@ func ShowFileOpen(win fyne.Window, callback func(fname, fpath string, err error)
 	d := dialog.NewFileOpen(func(reader fyne.URIReadCloser, err error) {
 		var fname, fpath string
 		if err == nil && reader != nil {
-			fname = reader.Name()
+			fname = reader.URI().String()[len(reader.URI().Scheme())+3:]
 			fpath = reader.URI().String()[len(reader.URI().Scheme())+3:]
 		}
 		callback(fname, fpath, err)

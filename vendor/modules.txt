@@ -1,64 +1,76 @@
 # fyne.io/fyne v1.4.3
 ## explicit; go 1.12
 fyne.io/fyne
-fyne.io/fyne/app
-fyne.io/fyne/canvas
 fyne.io/fyne/cmd/fyne_demo/data
-fyne.io/fyne/container
-fyne.io/fyne/dialog
-fyne.io/fyne/driver/desktop
-fyne.io/fyne/driver/mobile
-fyne.io/fyne/internal
-fyne.io/fyne/internal/app
-fyne.io/fyne/internal/cache
-fyne.io/fyne/internal/driver
-fyne.io/fyne/internal/driver/glfw
-fyne.io/fyne/internal/driver/gomobile
-fyne.io/fyne/internal/painter
-fyne.io/fyne/internal/painter/gl
-fyne.io/fyne/internal/painter/software
-fyne.io/fyne/internal/test
-fyne.io/fyne/internal/widget
-fyne.io/fyne/layout
-fyne.io/fyne/storage
-fyne.io/fyne/test
-fyne.io/fyne/theme
-fyne.io/fyne/widget
-# github.com/BurntSushi/toml v1.1.0
-## explicit; go 1.16
-# github.com/Kodeworks/golang-image-ico v0.0.0-20141118225523-73f0f4cfade9
-## explicit
-# github.com/andybalholm/brotli v1.0.4
-## explicit; go 1.12
-# github.com/aws/aws-sdk-go v1.41.19
-## explicit; go 1.11
+# fyne.io/fyne/v2 v2.3.4
+## explicit; go 1.14
+fyne.io/fyne/v2
+fyne.io/fyne/v2/app
+fyne.io/fyne/v2/canvas
+fyne.io/fyne/v2/container
+fyne.io/fyne/v2/data/binding
+fyne.io/fyne/v2/dialog
+fyne.io/fyne/v2/driver/desktop
+fyne.io/fyne/v2/driver/mobile
+fyne.io/fyne/v2/internal
+fyne.io/fyne/v2/internal/animation
+fyne.io/fyne/v2/internal/app
+fyne.io/fyne/v2/internal/async
+fyne.io/fyne/v2/internal/cache
+fyne.io/fyne/v2/internal/color
+fyne.io/fyne/v2/internal/driver
+fyne.io/fyne/v2/internal/driver/common
+fyne.io/fyne/v2/internal/driver/glfw
+fyne.io/fyne/v2/internal/driver/mobile
+fyne.io/fyne/v2/internal/driver/mobile/app
+fyne.io/fyne/v2/internal/driver/mobile/app/callfn
+fyne.io/fyne/v2/internal/driver/mobile/event/key
+fyne.io/fyne/v2/internal/driver/mobile/event/lifecycle
+fyne.io/fyne/v2/internal/driver/mobile/event/paint
+fyne.io/fyne/v2/internal/driver/mobile/event/size
+fyne.io/fyne/v2/internal/driver/mobile/event/touch
+fyne.io/fyne/v2/internal/driver/mobile/gl
+fyne.io/fyne/v2/internal/driver/mobile/mobileinit
+fyne.io/fyne/v2/internal/painter
+fyne.io/fyne/v2/internal/painter/gl
+fyne.io/fyne/v2/internal/painter/software
+fyne.io/fyne/v2/internal/repository
+fyne.io/fyne/v2/internal/svg
+fyne.io/fyne/v2/internal/test
+fyne.io/fyne/v2/internal/widget
+fyne.io/fyne/v2/layout
+fyne.io/fyne/v2/storage
+fyne.io/fyne/v2/storage/repository
+fyne.io/fyne/v2/test
+fyne.io/fyne/v2/theme
+fyne.io/fyne/v2/widget
+# fyne.io/systray v1.10.1-0.20230403195833-7dc3c09283d6
+## explicit; go 1.13
+fyne.io/systray
+fyne.io/systray/internal/generated/menu
+fyne.io/systray/internal/generated/notifier
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
 github.com/davecgh/go-spew/spew
-# github.com/docker/spdystream v0.0.0-20160310174837-449fdfce4d96
-## explicit
-# github.com/dsnet/compress v0.0.2-0.20210315054119-f66993602bf5
-## explicit; go 1.9
+# github.com/fredbi/uri v0.1.0
+## explicit; go 1.11
+github.com/fredbi/uri
 # github.com/fsnotify/fsnotify v1.5.4
 ## explicit; go 1.16
 github.com/fsnotify/fsnotify
-# github.com/fyne-io/fyne-cross v1.4.0
-## explicit; go 1.17
-# github.com/fyne-io/mobile v0.1.2
-## explicit; go 1.11
-github.com/fyne-io/mobile/app
-github.com/fyne-io/mobile/app/internal/callfn
-github.com/fyne-io/mobile/event/key
-github.com/fyne-io/mobile/event/lifecycle
-github.com/fyne-io/mobile/event/paint
-github.com/fyne-io/mobile/event/size
-github.com/fyne-io/mobile/event/touch
-github.com/fyne-io/mobile/exp/f32
-github.com/fyne-io/mobile/geom
-github.com/fyne-io/mobile/gl
-github.com/fyne-io/mobile/internal/mobileinit
+# github.com/fyne-io/gl-js v0.0.0-20220119005834-d2da28d9ccfe
+## explicit; go 1.14
+github.com/fyne-io/gl-js
+# github.com/fyne-io/glfw-js v0.0.0-20220120001248-ee7290d23504
+## explicit; go 1.14
+github.com/fyne-io/glfw-js
+# github.com/fyne-io/image v0.0.0-20220602074514-4956b0afb3d2
+## explicit; go 1.14
+github.com/fyne-io/image/ico
 # github.com/go-gl/gl v0.0.0-20211210172815-726fda9656d6
 ## explicit; go 1.12
+github.com/go-gl/gl/v2.1/gl
+github.com/go-gl/gl/v2.1/gl/KHR
 github.com/go-gl/gl/v3.1/gles2
 github.com/go-gl/gl/v3.1/gles2/KHR
 github.com/go-gl/gl/v3.2-core/gl
@@ -72,47 +84,40 @@ github.com/go-gl/glfw/v3.3/glfw/glfw/deps/mingw
 github.com/go-gl/glfw/v3.3/glfw/glfw/deps/vs2008
 github.com/go-gl/glfw/v3.3/glfw/glfw/include/GLFW
 github.com/go-gl/glfw/v3.3/glfw/glfw/src
+# github.com/go-text/typesetting v0.0.0-20230405155246-bf9c697c6e16
+## explicit; go 1.17
+github.com/go-text/typesetting/di
+github.com/go-text/typesetting/font
+github.com/go-text/typesetting/harfbuzz
+github.com/go-text/typesetting/language
+github.com/go-text/typesetting/opentype/api
+github.com/go-text/typesetting/opentype/api/font
+github.com/go-text/typesetting/opentype/api/font/cff
+github.com/go-text/typesetting/opentype/api/font/cff/interpreter
+github.com/go-text/typesetting/opentype/loader
+github.com/go-text/typesetting/opentype/tables
+github.com/go-text/typesetting/segmenter
+github.com/go-text/typesetting/shaping
+github.com/go-text/typesetting/unicodedata
 # github.com/godbus/dbus/v5 v5.1.0
 ## explicit; go 1.12
 github.com/godbus/dbus/v5
-# github.com/gogo/protobuf v1.3.2
-## explicit; go 1.15
+github.com/godbus/dbus/v5/introspect
+github.com/godbus/dbus/v5/prop
 # github.com/goki/freetype v0.0.0-20220119013949-7a161fd3728c
 ## explicit
 github.com/goki/freetype
 github.com/goki/freetype/raster
 github.com/goki/freetype/truetype
-# github.com/golang/protobuf v1.3.2
+# github.com/gopherjs/gopherjs v1.17.2
+## explicit; go 1.17
+github.com/gopherjs/gopherjs/js
+# github.com/jsummers/gobmp v0.0.0-20151104160322-e2ba15ffa76e
 ## explicit
-# github.com/golang/snappy v0.0.4
-## explicit
-# github.com/google/gofuzz v1.1.0
-## explicit; go 1.12
-# github.com/googleapis/gnostic v0.1.0
-## explicit
-# github.com/imdario/mergo v0.3.5
-## explicit
-# github.com/jmespath/go-jmespath v0.4.0
-## explicit; go 1.14
-# github.com/json-iterator/go v1.1.8
-## explicit; go 1.12
-# github.com/klauspost/compress v1.13.4
-## explicit; go 1.13
-# github.com/klauspost/pgzip v1.2.5
-## explicit
-# github.com/mholt/archiver/v3 v3.5.1
-## explicit; go 1.13
-# github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
-## explicit
-# github.com/modern-go/reflect2 v1.0.1
-## explicit
+github.com/jsummers/gobmp
 # github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826
 ## explicit
 github.com/mohae/deepcopy
-# github.com/nwaples/rardecode v1.1.0
-## explicit
-# github.com/pierrec/lz4/v4 v4.1.14
-## explicit; go 1.14
 # github.com/pmezard/go-difflib v1.0.0
 ## explicit
 github.com/pmezard/go-difflib/difflib
@@ -122,8 +127,6 @@ github.com/richardlehane/mscfb
 # github.com/richardlehane/msoleps v1.0.3
 ## explicit
 github.com/richardlehane/msoleps/types
-# github.com/spf13/pflag v1.0.5
-## explicit; go 1.12
 # github.com/srwiley/oksvg v0.0.0-20220731023508-a61f04f16b76
 ## explicit; go 1.17
 github.com/srwiley/oksvg
@@ -134,10 +137,9 @@ github.com/srwiley/rasterx
 ## explicit; go 1.13
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/require
-# github.com/ulikunitz/xz v0.5.10
-## explicit; go 1.12
-# github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8
-## explicit
+# github.com/tevino/abool v1.2.0
+## explicit; go 1.14
+github.com/tevino/abool
 # github.com/xuri/efp v0.0.0-20220603152613-6918739fd470
 ## explicit; go 1.11
 github.com/xuri/efp
@@ -147,35 +149,45 @@ github.com/xuri/excelize/v2
 # github.com/xuri/nfp v0.0.0-20220409054826-5e722a1d9e22
 ## explicit; go 1.15
 github.com/xuri/nfp
+# github.com/yuin/goldmark v1.4.13
+## explicit; go 1.18
+github.com/yuin/goldmark
+github.com/yuin/goldmark/ast
+github.com/yuin/goldmark/parser
+github.com/yuin/goldmark/renderer
+github.com/yuin/goldmark/renderer/html
+github.com/yuin/goldmark/text
+github.com/yuin/goldmark/util
 # golang.org/x/crypto v0.8.0
 ## explicit; go 1.17
 golang.org/x/crypto/md4
 golang.org/x/crypto/ripemd160
 # golang.org/x/image v0.5.0
 ## explicit; go 1.12
+golang.org/x/image/ccitt
 golang.org/x/image/colornames
 golang.org/x/image/draw
 golang.org/x/image/font
 golang.org/x/image/math/f64
 golang.org/x/image/math/fixed
+golang.org/x/image/tiff
+golang.org/x/image/tiff/lzw
 golang.org/x/image/vector
+# golang.org/x/mobile v0.0.0-20211207041440-4e6c2922fdee
+## explicit; go 1.16
+golang.org/x/mobile/exp/f32
 # golang.org/x/net v0.9.0
 ## explicit; go 1.17
 golang.org/x/net/html
 golang.org/x/net/html/atom
 golang.org/x/net/html/charset
-# golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
-## explicit; go 1.11
-# golang.org/x/sync v0.1.0
-## explicit
 # golang.org/x/sys v0.7.0
 ## explicit; go 1.17
+golang.org/x/sys/execabs
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
 golang.org/x/sys/windows
 golang.org/x/sys/windows/registry
-# golang.org/x/term v0.7.0
-## explicit; go 1.17
 # golang.org/x/text v0.9.0
 ## explicit; go 1.17
 golang.org/x/text/encoding
@@ -203,30 +215,9 @@ golang.org/x/text/message
 golang.org/x/text/message/catalog
 golang.org/x/text/runes
 golang.org/x/text/transform
-# golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
-## explicit
-# google.golang.org/appengine v1.5.0
-## explicit
-# gopkg.in/inf.v0 v0.9.1
-## explicit
-# gopkg.in/yaml.v2 v2.2.8
-## explicit
 # gopkg.in/yaml.v3 v3.0.1
 ## explicit
 gopkg.in/yaml.v3
-# k8s.io/api v0.18.19
-## explicit; go 1.13
-# k8s.io/apimachinery v0.18.19
-## explicit; go 1.13
-# k8s.io/client-go v0.18.17
-## explicit; go 1.13
-# k8s.io/klog v1.0.0
-## explicit; go 1.12
-# k8s.io/kubectl v0.18.17
-## explicit; go 1.13
-# k8s.io/utils v0.0.0-20200324210504-a9aa75ae1b89
-## explicit; go 1.12
-# sigs.k8s.io/structured-merge-diff/v3 v3.0.1
-## explicit; go 1.13
-# sigs.k8s.io/yaml v1.2.0
-## explicit; go 1.12
+# honnef.co/go/js/dom v0.0.0-20210725211120-f030747120f2
+## explicit
+honnef.co/go/js/dom
