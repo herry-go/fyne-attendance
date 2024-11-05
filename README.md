@@ -1,5 +1,5 @@
-# gtk-attendance 
-* 使用gtk实现的一个根据考勤excel文件，计算加班时长的gui工具
+# fyne-attendance 
+* 使用fyne实现的一个根据考勤excel文件，计算加班时长的gui工具
 * 客户端界面和服务端计算均使用golang语言
 
 ## 功能说明
